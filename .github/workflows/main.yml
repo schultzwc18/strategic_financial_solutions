@@ -15,7 +15,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
+  sha-dump:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Print GITHUB_SHA
+        run: echo "$GITHUB_SHA"
+
+  greeting:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,4 +33,7 @@ jobs:
       - name: Shell Linter
         uses: azohra/shell-linter@v0.4.0
         with:
-          path: "*.sh"
+          path: "greeting.sh"
+
+      - name: Run Greeting
+        run: ./greeting.sh $GITHUB_ACTOR
