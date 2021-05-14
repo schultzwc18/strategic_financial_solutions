@@ -27,4 +27,4 @@ jobs:
           path: "greeting.sh"
 
       - name: Run Greeting
-        run: sh ./greeting.sh $GITHUB_ACTOR
+        run: ./greeting.sh $GITHUB_ACTOR
