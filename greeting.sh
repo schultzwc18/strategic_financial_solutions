@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eo pipefail
 
-greeting(VAR) {
+greeting() {
 local _GITHUB_USER="${1}"
 local _str='Hello, $_GITHUB_USER !'
 echo $_str
